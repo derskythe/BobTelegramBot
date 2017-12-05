@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.bankofbaku.com/PaymentService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.bankofbaku.com/PaymentService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.bankofbaku.com/PaymentService/Imports">
+      <xsd:import schemaLocation="http://devsrv:8029/Services/InternetBankingMobileProdService?xsd=xsd0" namespace="http://www.bankofbaku.com/PaymentService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="InternetBankingMobileService_CheckUserCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserCredentials" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_CheckUserCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_CheckUserOtp_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserOtp" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_CheckUserOtp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckUserOtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_SavePinAndCompleteAuth_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePinAndCompleteAuth" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_SavePinAndCompleteAuth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePinAndCompleteAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientAccounts" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientCreditAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientCreditAccounts" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientCreditAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientCreditAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientCreditCards_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientCreditCards" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientCreditCards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientCreditCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientDebetCards_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientDebetCards" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientDebetCards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientDebetCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientDeposits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientDeposits" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientDeposits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientDepositsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetAccountInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetAccountInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientBankHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientBankHistory" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientBankHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientBankHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientAccountHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientAccountHistory" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientAccountHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientAccountHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientCardHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientCardHistory" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientCardHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientCardHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetOnlineServices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineServices" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetOnlineServices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetCurrencyRates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyRates" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetCurrencyRates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetCurrencyRatesV2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyRatesV2" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetCurrencyRatesV2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrencyRatesV2Response" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_RegisterUserFeedback_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserFeedback" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_RegisterUserFeedback_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserFeedbackResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetCreditOrderData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditOrderData" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetCreditOrderData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditOrderDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_RegisterCreditOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterCreditOrder" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_RegisterCreditOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterCreditOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_ChangeMobilePin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMobilePin" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_ChangeMobilePin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeMobilePinResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_ChangeClientPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeClientPassword" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_ChangeClientPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeClientPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetAccountInfoAndHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoAndHistory" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetAccountInfoAndHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountInfoAndHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientPosAccountHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientPosAccountHistory" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientPosAccountHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientPosAccountHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_Card2Card_InputMessage">
+    <wsdl:part name="parameters" element="tns:Card2Card" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_Card2Card_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Card2CardResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_Card2CardLocal_InputMessage">
+    <wsdl:part name="parameters" element="tns:Card2CardLocal" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_Card2CardLocal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Card2CardLocalResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientAllCards_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientAllCards" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientAllCards_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientAllCardsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_BlockCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:BlockCard" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_BlockCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BlockCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientAllCredits_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientAllCredits" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientAllCredits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientAllCreditsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_InitCreditTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitCreditTransaction" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_InitCreditTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitCreditTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_FinishCreditPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishCreditPayment" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_FinishCreditPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishCreditPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetPaymentCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentCategories" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetPaymentCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_CheckServiceFields_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckServiceFields" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_CheckServiceFields_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckServiceFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_ProcessEpayUtilityPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEpayUtilityPayment" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_ProcessEpayUtilityPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEpayUtilityPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_ProcessEcommUtilityPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEcommUtilityPayment" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_ProcessEcommUtilityPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessEcommUtilityPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_FinishEcommUtilityPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishEcommUtilityPayment" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_FinishEcommUtilityPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishEcommUtilityPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetPaymentHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentHistory" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetPaymentHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_TestFunctions_InputMessage">
+    <wsdl:part name="parameters" element="tns:TestFunctions" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_TestFunctions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestFunctionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_CheckMobilePinV2_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMobilePinV2" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_CheckMobilePinV2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMobilePinV2Response" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_CheckAsanCredentials_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAsanCredentials" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_CheckAsanCredentials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAsanCredentialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetAsanAuthStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsanAuthStatus" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetAsanAuthStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAsanAuthStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_SaveAsanAuthCertificate_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAsanAuthCertificate" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_SaveAsanAuthCertificate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAsanAuthCertificateResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_ConfirmAsanAuthAndLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmAsanAuthAndLogin" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_ConfirmAsanAuthAndLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmAsanAuthAndLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_SavePinAndConfirmAsanAuthLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePinAndConfirmAsanAuthLogin" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_SavePinAndConfirmAsanAuthLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePinAndConfirmAsanAuthLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientCreditInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientCreditInfo" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetClientCreditInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientCreditInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetBranchAndAtmList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchAndAtmList" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetBranchAndAtmList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchAndAtmListResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetCardsAndBranches_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardsAndBranches" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetCardsAndBranches_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardsAndBranchesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_OrderPlasticCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrderPlasticCard" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_OrderPlasticCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrderPlasticCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetBalanceSheets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceSheets" />
+  </wsdl:message>
+  <wsdl:message name="InternetBankingMobileService_GetBalanceSheets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceSheetsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="InternetBankingMobileService">
+    <wsdl:operation name="CheckUserCredentials">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckUserCredentials" message="tns:InternetBankingMobileService_CheckUserCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckUserCredentialsResponse" message="tns:InternetBankingMobileService_CheckUserCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserOtp">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckUserOtp" message="tns:InternetBankingMobileService_CheckUserOtp_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckUserOtpResponse" message="tns:InternetBankingMobileService_CheckUserOtp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePinAndCompleteAuth">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/SavePinAndCompleteAuth" message="tns:InternetBankingMobileService_SavePinAndCompleteAuth_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/SavePinAndCompleteAuthResponse" message="tns:InternetBankingMobileService_SavePinAndCompleteAuth_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAccounts">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAccounts" message="tns:InternetBankingMobileService_GetClientAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAccountsResponse" message="tns:InternetBankingMobileService_GetClientAccounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientCreditAccounts">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCreditAccounts" message="tns:InternetBankingMobileService_GetClientCreditAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCreditAccountsResponse" message="tns:InternetBankingMobileService_GetClientCreditAccounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientCreditCards">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCreditCards" message="tns:InternetBankingMobileService_GetClientCreditCards_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCreditCardsResponse" message="tns:InternetBankingMobileService_GetClientCreditCards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDebetCards">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientDebetCards" message="tns:InternetBankingMobileService_GetClientDebetCards_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientDebetCardsResponse" message="tns:InternetBankingMobileService_GetClientDebetCards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeposits">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientDeposits" message="tns:InternetBankingMobileService_GetClientDeposits_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientDepositsResponse" message="tns:InternetBankingMobileService_GetClientDeposits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetAccountInfo" message="tns:InternetBankingMobileService_GetAccountInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetAccountInfoResponse" message="tns:InternetBankingMobileService_GetAccountInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientBankHistory">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientBankHistory" message="tns:InternetBankingMobileService_GetClientBankHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientBankHistoryResponse" message="tns:InternetBankingMobileService_GetClientBankHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAccountHistory">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAccountHistory" message="tns:InternetBankingMobileService_GetClientAccountHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAccountHistoryResponse" message="tns:InternetBankingMobileService_GetClientAccountHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientCardHistory">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCardHistory" message="tns:InternetBankingMobileService_GetClientCardHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCardHistoryResponse" message="tns:InternetBankingMobileService_GetClientCardHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineServices">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetOnlineServices" message="tns:InternetBankingMobileService_GetOnlineServices_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetOnlineServicesResponse" message="tns:InternetBankingMobileService_GetOnlineServices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyRates">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCurrencyRates" message="tns:InternetBankingMobileService_GetCurrencyRates_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCurrencyRatesResponse" message="tns:InternetBankingMobileService_GetCurrencyRates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyRatesV2">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCurrencyRatesV2" message="tns:InternetBankingMobileService_GetCurrencyRatesV2_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCurrencyRatesV2Response" message="tns:InternetBankingMobileService_GetCurrencyRatesV2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUserFeedback">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/RegisterUserFeedback" message="tns:InternetBankingMobileService_RegisterUserFeedback_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/RegisterUserFeedbackResponse" message="tns:InternetBankingMobileService_RegisterUserFeedback_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditOrderData">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCreditOrderData" message="tns:InternetBankingMobileService_GetCreditOrderData_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCreditOrderDataResponse" message="tns:InternetBankingMobileService_GetCreditOrderData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCreditOrder">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/RegisterCreditOrder" message="tns:InternetBankingMobileService_RegisterCreditOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/RegisterCreditOrderResponse" message="tns:InternetBankingMobileService_RegisterCreditOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMobilePin">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ChangeMobilePin" message="tns:InternetBankingMobileService_ChangeMobilePin_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ChangeMobilePinResponse" message="tns:InternetBankingMobileService_ChangeMobilePin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeClientPassword">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ChangeClientPassword" message="tns:InternetBankingMobileService_ChangeClientPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ChangeClientPasswordResponse" message="tns:InternetBankingMobileService_ChangeClientPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfoAndHistory">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetAccountInfoAndHistory" message="tns:InternetBankingMobileService_GetAccountInfoAndHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetAccountInfoAndHistoryResponse" message="tns:InternetBankingMobileService_GetAccountInfoAndHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientPosAccountHistory">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientPosAccountHistory" message="tns:InternetBankingMobileService_GetClientPosAccountHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientPosAccountHistoryResponse" message="tns:InternetBankingMobileService_GetClientPosAccountHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Card2Card">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/Card2Card" message="tns:InternetBankingMobileService_Card2Card_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/Card2CardResponse" message="tns:InternetBankingMobileService_Card2Card_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Card2CardLocal">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/Card2CardLocal" message="tns:InternetBankingMobileService_Card2CardLocal_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/Card2CardLocalResponse" message="tns:InternetBankingMobileService_Card2CardLocal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAllCards">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAllCards" message="tns:InternetBankingMobileService_GetClientAllCards_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAllCardsResponse" message="tns:InternetBankingMobileService_GetClientAllCards_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BlockCard">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/BlockCard" message="tns:InternetBankingMobileService_BlockCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/BlockCardResponse" message="tns:InternetBankingMobileService_BlockCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAllCredits">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAllCredits" message="tns:InternetBankingMobileService_GetClientAllCredits_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAllCreditsResponse" message="tns:InternetBankingMobileService_GetClientAllCredits_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitCreditTransaction">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/InitCreditTransaction" message="tns:InternetBankingMobileService_InitCreditTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/InitCreditTransactionResponse" message="tns:InternetBankingMobileService_InitCreditTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishCreditPayment">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/FinishCreditPayment" message="tns:InternetBankingMobileService_FinishCreditPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/FinishCreditPaymentResponse" message="tns:InternetBankingMobileService_FinishCreditPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentCategories">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetPaymentCategories" message="tns:InternetBankingMobileService_GetPaymentCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetPaymentCategoriesResponse" message="tns:InternetBankingMobileService_GetPaymentCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckServiceFields">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckServiceFields" message="tns:InternetBankingMobileService_CheckServiceFields_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckServiceFieldsResponse" message="tns:InternetBankingMobileService_CheckServiceFields_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEpayUtilityPayment">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ProcessEpayUtilityPayment" message="tns:InternetBankingMobileService_ProcessEpayUtilityPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ProcessEpayUtilityPaymentResponse" message="tns:InternetBankingMobileService_ProcessEpayUtilityPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEcommUtilityPayment">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ProcessEcommUtilityPayment" message="tns:InternetBankingMobileService_ProcessEcommUtilityPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ProcessEcommUtilityPaymentResponse" message="tns:InternetBankingMobileService_ProcessEcommUtilityPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishEcommUtilityPayment">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/FinishEcommUtilityPayment" message="tns:InternetBankingMobileService_FinishEcommUtilityPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/FinishEcommUtilityPaymentResponse" message="tns:InternetBankingMobileService_FinishEcommUtilityPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentHistory">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetPaymentHistory" message="tns:InternetBankingMobileService_GetPaymentHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetPaymentHistoryResponse" message="tns:InternetBankingMobileService_GetPaymentHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TestFunctions">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/TestFunctions" message="tns:InternetBankingMobileService_TestFunctions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/TestFunctionsResponse" message="tns:InternetBankingMobileService_TestFunctions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMobilePinV2">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckMobilePinV2" message="tns:InternetBankingMobileService_CheckMobilePinV2_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckMobilePinV2Response" message="tns:InternetBankingMobileService_CheckMobilePinV2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAsanCredentials">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckAsanCredentials" message="tns:InternetBankingMobileService_CheckAsanCredentials_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckAsanCredentialsResponse" message="tns:InternetBankingMobileService_CheckAsanCredentials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAsanAuthStatus">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetAsanAuthStatus" message="tns:InternetBankingMobileService_GetAsanAuthStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetAsanAuthStatusResponse" message="tns:InternetBankingMobileService_GetAsanAuthStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAsanAuthCertificate">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/SaveAsanAuthCertificate" message="tns:InternetBankingMobileService_SaveAsanAuthCertificate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/SaveAsanAuthCertificateResponse" message="tns:InternetBankingMobileService_SaveAsanAuthCertificate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmAsanAuthAndLogin">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ConfirmAsanAuthAndLogin" message="tns:InternetBankingMobileService_ConfirmAsanAuthAndLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ConfirmAsanAuthAndLoginResponse" message="tns:InternetBankingMobileService_ConfirmAsanAuthAndLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePinAndConfirmAsanAuthLogin">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/SavePinAndConfirmAsanAuthLogin" message="tns:InternetBankingMobileService_SavePinAndConfirmAsanAuthLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/SavePinAndConfirmAsanAuthLoginResponse" message="tns:InternetBankingMobileService_SavePinAndConfirmAsanAuthLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientCreditInfo">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCreditInfo" message="tns:InternetBankingMobileService_GetClientCreditInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCreditInfoResponse" message="tns:InternetBankingMobileService_GetClientCreditInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchAndAtmList">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetBranchAndAtmList" message="tns:InternetBankingMobileService_GetBranchAndAtmList_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetBranchAndAtmListResponse" message="tns:InternetBankingMobileService_GetBranchAndAtmList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsAndBranches">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCardsAndBranches" message="tns:InternetBankingMobileService_GetCardsAndBranches_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCardsAndBranchesResponse" message="tns:InternetBankingMobileService_GetCardsAndBranches_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderPlasticCard">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/OrderPlasticCard" message="tns:InternetBankingMobileService_OrderPlasticCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/OrderPlasticCardResponse" message="tns:InternetBankingMobileService_OrderPlasticCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceSheets">
+      <wsdl:input wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetBalanceSheets" message="tns:InternetBankingMobileService_GetBalanceSheets_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetBalanceSheetsResponse" message="tns:InternetBankingMobileService_GetBalanceSheets_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

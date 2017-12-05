@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds" targetNamespace="http://tempuri.org/ds.xsd" xmlns:mstns="http://tempuri.org/ds.xsd" xmlns="http://tempuri.org/ds.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="cs" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="cs (Settings)" ParameterPrefix=":" PropertyReference="ApplicationSettings.Db.Properties.Settings.GlobalReference.Default.cs" Provider="Oracle.DataAccess.Client" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_TELEGRAM_AUTH_KEYSTableAdapter" GeneratorDataComponentClassName="V_TELEGRAM_AUTH_KEYSTableAdapter" Name="V_TELEGRAM_AUTH_KEYS" UserDataComponentName="V_TELEGRAM_AUTH_KEYSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_TELEGRAM_AUTH_KEYS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT INSERT_DATE, AUTH_KEY, PHONE_NUMBER FROM BOB_SMSC.V_TELEGRAM_AUTH_KEYS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="INSERT_DATE" DataSetColumn="INSERT_DATE" />
+              <Mapping SourceColumn="AUTH_KEY" DataSetColumn="AUTH_KEY" />
+              <Mapping SourceColumn="PHONE_NUMBER" DataSetColumn="PHONE_NUMBER" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_TELEGRAM_KNOWN_USERSTableAdapter" GeneratorDataComponentClassName="V_TELEGRAM_KNOWN_USERSTableAdapter" Name="V_TELEGRAM_KNOWN_USERS" UserDataComponentName="V_TELEGRAM_KNOWN_USERSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_TELEGRAM_KNOWN_USERS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT USER_ID, PHONE_NUMBER, ADD_DATE, UPDATE_DATE, RECEIVE_SETTINGS, USERNAME, LAST_FEEDBACK, FEEDBACK_COUNT, LAST_CREDIT_REQUEST, LAST_PLASTIC_CARD, PLASTIC_CARD_COUNT FROM BOB_SMSC.V_TELEGRAM_KNOWN_USERS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="USER_ID" DataSetColumn="USER_ID" />
+              <Mapping SourceColumn="PHONE_NUMBER" DataSetColumn="PHONE_NUMBER" />
+              <Mapping SourceColumn="ADD_DATE" DataSetColumn="ADD_DATE" />
+              <Mapping SourceColumn="UPDATE_DATE" DataSetColumn="UPDATE_DATE" />
+              <Mapping SourceColumn="RECEIVE_SETTINGS" DataSetColumn="RECEIVE_SETTINGS" />
+              <Mapping SourceColumn="USERNAME" DataSetColumn="USERNAME" />
+              <Mapping SourceColumn="LAST_FEEDBACK" DataSetColumn="LAST_FEEDBACK" />
+              <Mapping SourceColumn="FEEDBACK_COUNT" DataSetColumn="FEEDBACK_COUNT" />
+              <Mapping SourceColumn="LAST_CREDIT_REQUEST" DataSetColumn="LAST_CREDIT_REQUEST" />
+              <Mapping SourceColumn="LAST_PLASTIC_CARD" DataSetColumn="LAST_PLASTIC_CARD" />
+              <Mapping SourceColumn="PLASTIC_CARD_COUNT" DataSetColumn="PLASTIC_CARD_COUNT" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_TELEGRAM_KNOWN_USERS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByPhoneNumber" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPhoneNumber" GeneratorSourceName="FillByPhoneNumber" GetMethodModifier="Public" GetMethodName="GetDataByPhoneNumber" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPhoneNumber" UserSourceName="FillByPhoneNumber">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT USER_ID, PHONE_NUMBER, ADD_DATE, UPDATE_DATE, RECEIVE_SETTINGS, USERNAME, LAST_FEEDBACK, FEEDBACK_COUNT, LAST_CREDIT_REQUEST, LAST_PLASTIC_CARD, PLASTIC_CARD_COUNT FROM BOB_SMSC.V_TELEGRAM_KNOWN_USERS WHERE (PHONE_NUMBER = :phoneNumber)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="phoneNumber" ColumnName="PHONE_NUMBER" DataSourceName="BOB_SMSC.V_TELEGRAM_KNOWN_USERS" DataTypeServer="VARCHAR2(150)" DbType="String" Direction="Input" ParameterName=":phoneNumber" Precision="0" ProviderType="Varchar2" Scale="0" Size="150" SourceColumn="PHONE_NUMBER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_TELEGRAM_KNOWN_USERS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByUserId" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUserId" GeneratorSourceName="FillByUserId" GetMethodModifier="Public" GetMethodName="GetDataByUserId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUserId" UserSourceName="FillByUserId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT USER_ID, PHONE_NUMBER, ADD_DATE, UPDATE_DATE, RECEIVE_SETTINGS, USERNAME, LAST_FEEDBACK, FEEDBACK_COUNT, LAST_CREDIT_REQUEST, LAST_PLASTIC_CARD, PLASTIC_CARD_COUNT FROM BOB_SMSC.V_TELEGRAM_KNOWN_USERS WHERE (USER_ID = :userId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userId" ColumnName="USER_ID" DataSourceName="BOB_SMSC.V_TELEGRAM_KNOWN_USERS" DataTypeServer="NUMBER(22)" DbType="Decimal" Direction="Input" ParameterName=":userId" Precision="12" ProviderType="Decimal" Scale="0" Size="22" SourceColumn="USER_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_TELEGRAM_MESSAGES_ACTIVETableAdapter" GeneratorDataComponentClassName="V_TELEGRAM_MESSAGES_ACTIVETableAdapter" Name="V_TELEGRAM_MESSAGES_ACTIVE" UserDataComponentName="V_TELEGRAM_MESSAGES_ACTIVETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_TELEGRAM_MESSAGES_ACTIVE" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, USER_ID, INSERT_DATE, MESSAGE_TEXT, IS_SENT, UPDATE_DATE FROM BOB_SMSC.V_TELEGRAM_MESSAGES_ACTIVE</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="USER_ID" DataSetColumn="USER_ID" />
+              <Mapping SourceColumn="INSERT_DATE" DataSetColumn="INSERT_DATE" />
+              <Mapping SourceColumn="MESSAGE_TEXT" DataSetColumn="MESSAGE_TEXT" />
+              <Mapping SourceColumn="IS_SENT" DataSetColumn="IS_SENT" />
+              <Mapping SourceColumn="UPDATE_DATE" DataSetColumn="UPDATE_DATE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_TELEGRAM_SAVED_CREDITTableAdapter" GeneratorDataComponentClassName="V_TELEGRAM_SAVED_CREDITTableAdapter" Name="V_TELEGRAM_SAVED_CREDIT" UserDataComponentName="V_TELEGRAM_SAVED_CREDITTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_TELEGRAM_SAVED_CREDIT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, USER_ID, CLIENT_ID, BIRTHDATE FROM BOB_SMSC.V_TELEGRAM_SAVED_CREDIT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="USER_ID" DataSetColumn="USER_ID" />
+              <Mapping SourceColumn="CLIENT_ID" DataSetColumn="CLIENT_ID" />
+              <Mapping SourceColumn="BIRTHDATE" DataSetColumn="BIRTHDATE" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_TELEGRAM_SAVED_CREDIT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByUserId" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUserId" GeneratorSourceName="FillByUserId" GetMethodModifier="Public" GetMethodName="GetDataByUserId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUserId" UserSourceName="FillByUserId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID, USER_ID, CLIENT_ID, BIRTHDATE FROM BOB_SMSC.V_TELEGRAM_SAVED_CREDIT WHERE user_id = :userID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userID" ColumnName="USER_ID" DataSourceName="BOB_SMSC.V_TELEGRAM_SAVED_CREDIT" DataTypeServer="NUMBER(22)" DbType="Decimal" Direction="Input" ParameterName=":userID" Precision="12" ProviderType="Decimal" Scale="0" Size="22" SourceColumn="USER_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_FACEBOOK_KNOWN_USERSTableAdapter" GeneratorDataComponentClassName="V_FACEBOOK_KNOWN_USERSTableAdapter" Name="V_FACEBOOK_KNOWN_USERS" UserDataComponentName="V_FACEBOOK_KNOWN_USERSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_FACEBOOK_KNOWN_USERS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT USER_ID, PHONE_NUMBER, ADD_DATE, UPDATE_DATE, RECEIVE_SETTINGS, USERNAME, LAST_FEEDBACK, FEEDBACK_COUNT, LAST_CREDIT_REQUEST, LAST_PLASTIC_CARD, PLASTIC_CARD_COUNT, "LANGUAGE" FROM BOB_SMSC.V_FACEBOOK_KNOWN_USERS</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="USER_ID" DataSetColumn="USER_ID" />
+              <Mapping SourceColumn="PHONE_NUMBER" DataSetColumn="PHONE_NUMBER" />
+              <Mapping SourceColumn="ADD_DATE" DataSetColumn="ADD_DATE" />
+              <Mapping SourceColumn="UPDATE_DATE" DataSetColumn="UPDATE_DATE" />
+              <Mapping SourceColumn="RECEIVE_SETTINGS" DataSetColumn="RECEIVE_SETTINGS" />
+              <Mapping SourceColumn="USERNAME" DataSetColumn="USERNAME" />
+              <Mapping SourceColumn="LAST_FEEDBACK" DataSetColumn="LAST_FEEDBACK" />
+              <Mapping SourceColumn="FEEDBACK_COUNT" DataSetColumn="FEEDBACK_COUNT" />
+              <Mapping SourceColumn="LAST_CREDIT_REQUEST" DataSetColumn="LAST_CREDIT_REQUEST" />
+              <Mapping SourceColumn="LAST_PLASTIC_CARD" DataSetColumn="LAST_PLASTIC_CARD" />
+              <Mapping SourceColumn="PLASTIC_CARD_COUNT" DataSetColumn="PLASTIC_CARD_COUNT" />
+              <Mapping SourceColumn="LANGUAGE" DataSetColumn="LANGUAGE" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_FACEBOOK_KNOWN_USERS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByPhoneNumber" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPhoneNumber" GeneratorSourceName="FillByPhoneNumber" GetMethodModifier="Public" GetMethodName="GetDataByPhoneNumber" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPhoneNumber" UserSourceName="FillByPhoneNumber">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT USER_ID, PHONE_NUMBER, ADD_DATE, UPDATE_DATE, RECEIVE_SETTINGS, USERNAME, LAST_FEEDBACK, FEEDBACK_COUNT, LAST_CREDIT_REQUEST, LAST_PLASTIC_CARD, PLASTIC_CARD_COUNT, "LANGUAGE" FROM BOB_SMSC.V_FACEBOOK_KNOWN_USERS WHERE (PHONE_NUMBER = :phoneNumber)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="phoneNumber" ColumnName="PHONE_NUMBER" DataSourceName="BOB_SMSC.V_FACEBOOK_KNOWN_USERS" DataTypeServer="VARCHAR2(150)" DbType="String" Direction="Input" ParameterName=":phoneNumber" Precision="0" ProviderType="Varchar2" Scale="0" Size="150" SourceColumn="PHONE_NUMBER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_FACEBOOK_KNOWN_USERS" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByUserId" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUserId" GeneratorSourceName="FillByUserId" GetMethodModifier="Public" GetMethodName="GetDataByUserId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUserId" UserSourceName="FillByUserId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT USER_ID, PHONE_NUMBER, ADD_DATE, UPDATE_DATE, RECEIVE_SETTINGS, USERNAME, LAST_FEEDBACK, FEEDBACK_COUNT, LAST_CREDIT_REQUEST, LAST_PLASTIC_CARD, PLASTIC_CARD_COUNT, "LANGUAGE" FROM BOB_SMSC.V_FACEBOOK_KNOWN_USERS WHERE (USER_ID = :userId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userId" ColumnName="USER_ID" DataSourceName="BOB_SMSC.V_FACEBOOK_KNOWN_USERS" DataTypeServer="VARCHAR2(100)" DbType="String" Direction="Input" ParameterName=":userId" Precision="0" ProviderType="Varchar2" Scale="0" Size="100" SourceColumn="USER_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_FACEBOOK_SAVED_CREDITTableAdapter" GeneratorDataComponentClassName="V_FACEBOOK_SAVED_CREDITTableAdapter" Name="V_FACEBOOK_SAVED_CREDIT" UserDataComponentName="V_FACEBOOK_SAVED_CREDITTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_FACEBOOK_SAVED_CREDIT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, USER_ID, CLIENT_ID, BIRTHDATE FROM BOB_SMSC.V_FACEBOOK_SAVED_CREDIT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="USER_ID" DataSetColumn="USER_ID" />
+              <Mapping SourceColumn="CLIENT_ID" DataSetColumn="CLIENT_ID" />
+              <Mapping SourceColumn="BIRTHDATE" DataSetColumn="BIRTHDATE" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="cs (Settings)" DbObjectName="BOB_SMSC.V_FACEBOOK_SAVED_CREDIT" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByUserId" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUserId" GeneratorSourceName="FillByUserId" GetMethodModifier="Public" GetMethodName="GetDataByUserId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUserId" UserSourceName="FillByUserId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID, USER_ID, CLIENT_ID, BIRTHDATE FROM BOB_SMSC.V_FACEBOOK_SAVED_CREDIT WHERE user_id = :userID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="userID" ColumnName="USER_ID" DataSourceName="BOB_SMSC.V_FACEBOOK_SAVED_CREDIT" DataTypeServer="VARCHAR2(100)" DbType="String" Direction="Input" ParameterName=":userID" Precision="0" ProviderType="Varchar2" Scale="0" Size="100" SourceColumn="USER_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ds" msprop:Generator_UserDSName="ds">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_TELEGRAM_AUTH_KEYS" msprop:Generator_TableClassName="V_TELEGRAM_AUTH_KEYSDataTable" msprop:Generator_TableVarName="tableV_TELEGRAM_AUTH_KEYS" msprop:Generator_TablePropName="V_TELEGRAM_AUTH_KEYS" msprop:Generator_RowDeletingName="V_TELEGRAM_AUTH_KEYSRowDeleting" msprop:Generator_RowChangingName="V_TELEGRAM_AUTH_KEYSRowChanging" msprop:Generator_RowEvHandlerName="V_TELEGRAM_AUTH_KEYSRowChangeEventHandler" msprop:Generator_RowDeletedName="V_TELEGRAM_AUTH_KEYSRowDeleted" msprop:Generator_UserTableName="V_TELEGRAM_AUTH_KEYS" msprop:Generator_RowChangedName="V_TELEGRAM_AUTH_KEYSRowChanged" msprop:Generator_RowEvArgName="V_TELEGRAM_AUTH_KEYSRowChangeEvent" msprop:Generator_RowClassName="V_TELEGRAM_AUTH_KEYSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="INSERT_DATE" msprop:Generator_ColumnVarNameInTable="columnINSERT_DATE" msprop:Generator_ColumnPropNameInRow="INSERT_DATE" msprop:Generator_ColumnPropNameInTable="INSERT_DATEColumn" msprop:Generator_UserColumnName="INSERT_DATE" type="xs:dateTime" />
+              <xs:element name="AUTH_KEY" msprop:Generator_ColumnVarNameInTable="columnAUTH_KEY" msprop:Generator_ColumnPropNameInRow="AUTH_KEY" msprop:Generator_ColumnPropNameInTable="AUTH_KEYColumn" msprop:Generator_UserColumnName="AUTH_KEY">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PHONE_NUMBER" msprop:Generator_ColumnVarNameInTable="columnPHONE_NUMBER" msprop:Generator_ColumnPropNameInRow="PHONE_NUMBER" msprop:Generator_ColumnPropNameInTable="PHONE_NUMBERColumn" msprop:Generator_UserColumnName="PHONE_NUMBER">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="V_TELEGRAM_KNOWN_USERS" msprop:Generator_TableClassName="V_TELEGRAM_KNOWN_USERSDataTable" msprop:Generator_TableVarName="tableV_TELEGRAM_KNOWN_USERS" msprop:Generator_TablePropName="V_TELEGRAM_KNOWN_USERS" msprop:Generator_RowDeletingName="V_TELEGRAM_KNOWN_USERSRowDeleting" msprop:Generator_RowChangingName="V_TELEGRAM_KNOWN_USERSRowChanging" msprop:Generator_RowEvHandlerName="V_TELEGRAM_KNOWN_USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="V_TELEGRAM_KNOWN_USERSRowDeleted" msprop:Generator_UserTableName="V_TELEGRAM_KNOWN_USERS" msprop:Generator_RowChangedName="V_TELEGRAM_KNOWN_USERSRowChanged" msprop:Generator_RowEvArgName="V_TELEGRAM_KNOWN_USERSRowChangeEvent" msprop:Generator_RowClassName="V_TELEGRAM_KNOWN_USERSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="USER_ID" msprop:Generator_ColumnVarNameInTable="columnUSER_ID" msprop:Generator_ColumnPropNameInRow="USER_ID" msprop:Generator_ColumnPropNameInTable="USER_IDColumn" msprop:Generator_UserColumnName="USER_ID" type="xs:long" />
+              <xs:element name="PHONE_NUMBER" msprop:Generator_ColumnVarNameInTable="columnPHONE_NUMBER" msprop:Generator_ColumnPropNameInRow="PHONE_NUMBER" msprop:Generator_ColumnPropNameInTable="PHONE_NUMBERColumn" msprop:Generator_UserColumnName="PHONE_NUMBER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADD_DATE" msprop:Generator_ColumnVarNameInTable="columnADD_DATE" msprop:Generator_ColumnPropNameInRow="ADD_DATE" msprop:Generator_ColumnPropNameInTable="ADD_DATEColumn" msprop:Generator_UserColumnName="ADD_DATE" type="xs:dateTime" />
+              <xs:element name="UPDATE_DATE" msprop:Generator_ColumnVarNameInTable="columnUPDATE_DATE" msprop:Generator_ColumnPropNameInRow="UPDATE_DATE" msprop:Generator_ColumnPropNameInTable="UPDATE_DATEColumn" msprop:Generator_UserColumnName="UPDATE_DATE" type="xs:dateTime" />
+              <xs:element name="RECEIVE_SETTINGS" msprop:Generator_ColumnVarNameInTable="columnRECEIVE_SETTINGS" msprop:Generator_ColumnPropNameInRow="RECEIVE_SETTINGS" msprop:Generator_ColumnPropNameInTable="RECEIVE_SETTINGSColumn" msprop:Generator_UserColumnName="RECEIVE_SETTINGS" type="xs:short" />
+              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME" msprop:Generator_ColumnPropNameInRow="USERNAME" msprop:Generator_ColumnPropNameInTable="USERNAMEColumn" msprop:Generator_UserColumnName="USERNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LAST_FEEDBACK" msprop:Generator_ColumnVarNameInTable="columnLAST_FEEDBACK" msprop:Generator_ColumnPropNameInRow="LAST_FEEDBACK" msprop:Generator_ColumnPropNameInTable="LAST_FEEDBACKColumn" msprop:Generator_UserColumnName="LAST_FEEDBACK" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FEEDBACK_COUNT" msprop:Generator_ColumnVarNameInTable="columnFEEDBACK_COUNT" msprop:Generator_ColumnPropNameInRow="FEEDBACK_COUNT" msprop:Generator_ColumnPropNameInTable="FEEDBACK_COUNTColumn" msprop:Generator_UserColumnName="FEEDBACK_COUNT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LAST_CREDIT_REQUEST" msprop:Generator_ColumnVarNameInTable="columnLAST_CREDIT_REQUEST" msprop:Generator_ColumnPropNameInRow="LAST_CREDIT_REQUEST" msprop:Generator_ColumnPropNameInTable="LAST_CREDIT_REQUESTColumn" msprop:Generator_UserColumnName="LAST_CREDIT_REQUEST" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LAST_PLASTIC_CARD" msprop:Generator_ColumnVarNameInTable="columnLAST_PLASTIC_CARD" msprop:Generator_ColumnPropNameInRow="LAST_PLASTIC_CARD" msprop:Generator_ColumnPropNameInTable="LAST_PLASTIC_CARDColumn" msprop:Generator_UserColumnName="LAST_PLASTIC_CARD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PLASTIC_CARD_COUNT" msprop:Generator_ColumnVarNameInTable="columnPLASTIC_CARD_COUNT" msprop:Generator_ColumnPropNameInRow="PLASTIC_CARD_COUNT" msprop:Generator_ColumnPropNameInTable="PLASTIC_CARD_COUNTColumn" msprop:Generator_UserColumnName="PLASTIC_CARD_COUNT" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="V_TELEGRAM_MESSAGES_ACTIVE" msprop:Generator_TableClassName="V_TELEGRAM_MESSAGES_ACTIVEDataTable" msprop:Generator_TableVarName="tableV_TELEGRAM_MESSAGES_ACTIVE" msprop:Generator_TablePropName="V_TELEGRAM_MESSAGES_ACTIVE" msprop:Generator_RowDeletingName="V_TELEGRAM_MESSAGES_ACTIVERowDeleting" msprop:Generator_RowChangingName="V_TELEGRAM_MESSAGES_ACTIVERowChanging" msprop:Generator_RowEvHandlerName="V_TELEGRAM_MESSAGES_ACTIVERowChangeEventHandler" msprop:Generator_RowDeletedName="V_TELEGRAM_MESSAGES_ACTIVERowDeleted" msprop:Generator_UserTableName="V_TELEGRAM_MESSAGES_ACTIVE" msprop:Generator_RowChangedName="V_TELEGRAM_MESSAGES_ACTIVERowChanged" msprop:Generator_RowEvArgName="V_TELEGRAM_MESSAGES_ACTIVERowChangeEvent" msprop:Generator_RowClassName="V_TELEGRAM_MESSAGES_ACTIVERow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="USER_ID" msprop:Generator_ColumnVarNameInTable="columnUSER_ID" msprop:Generator_ColumnPropNameInRow="USER_ID" msprop:Generator_ColumnPropNameInTable="USER_IDColumn" msprop:Generator_UserColumnName="USER_ID" type="xs:long" />
+              <xs:element name="INSERT_DATE" msprop:Generator_ColumnVarNameInTable="columnINSERT_DATE" msprop:Generator_ColumnPropNameInRow="INSERT_DATE" msprop:Generator_ColumnPropNameInTable="INSERT_DATEColumn" msprop:Generator_UserColumnName="INSERT_DATE" type="xs:dateTime" />
+              <xs:element name="MESSAGE_TEXT" msprop:Generator_ColumnVarNameInTable="columnMESSAGE_TEXT" msprop:Generator_ColumnPropNameInRow="MESSAGE_TEXT" msprop:Generator_ColumnPropNameInTable="MESSAGE_TEXTColumn" msprop:Generator_UserColumnName="MESSAGE_TEXT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IS_SENT" msprop:Generator_ColumnVarNameInTable="columnIS_SENT" msprop:Generator_ColumnPropNameInRow="IS_SENT" msprop:Generator_ColumnPropNameInTable="IS_SENTColumn" msprop:Generator_UserColumnName="IS_SENT" type="xs:short" />
+              <xs:element name="UPDATE_DATE" msprop:Generator_ColumnVarNameInTable="columnUPDATE_DATE" msprop:Generator_ColumnPropNameInRow="UPDATE_DATE" msprop:Generator_ColumnPropNameInTable="UPDATE_DATEColumn" msprop:Generator_UserColumnName="UPDATE_DATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="V_TELEGRAM_SAVED_CREDIT" msprop:Generator_TableClassName="V_TELEGRAM_SAVED_CREDITDataTable" msprop:Generator_TableVarName="tableV_TELEGRAM_SAVED_CREDIT" msprop:Generator_TablePropName="V_TELEGRAM_SAVED_CREDIT" msprop:Generator_RowDeletingName="V_TELEGRAM_SAVED_CREDITRowDeleting" msprop:Generator_RowChangingName="V_TELEGRAM_SAVED_CREDITRowChanging" msprop:Generator_RowEvHandlerName="V_TELEGRAM_SAVED_CREDITRowChangeEventHandler" msprop:Generator_RowDeletedName="V_TELEGRAM_SAVED_CREDITRowDeleted" msprop:Generator_UserTableName="V_TELEGRAM_SAVED_CREDIT" msprop:Generator_RowChangedName="V_TELEGRAM_SAVED_CREDITRowChanged" msprop:Generator_RowEvArgName="V_TELEGRAM_SAVED_CREDITRowChangeEvent" msprop:Generator_RowClassName="V_TELEGRAM_SAVED_CREDITRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="USER_ID" msprop:Generator_ColumnVarNameInTable="columnUSER_ID" msprop:Generator_ColumnPropNameInRow="USER_ID" msprop:Generator_ColumnPropNameInTable="USER_IDColumn" msprop:Generator_UserColumnName="USER_ID" type="xs:long" />
+              <xs:element name="CLIENT_ID" msprop:Generator_ColumnVarNameInTable="columnCLIENT_ID" msprop:Generator_ColumnPropNameInRow="CLIENT_ID" msprop:Generator_ColumnPropNameInTable="CLIENT_IDColumn" msprop:Generator_UserColumnName="CLIENT_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BIRTHDATE" msprop:Generator_ColumnVarNameInTable="columnBIRTHDATE" msprop:Generator_ColumnPropNameInRow="BIRTHDATE" msprop:Generator_ColumnPropNameInTable="BIRTHDATEColumn" msprop:Generator_UserColumnName="BIRTHDATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="V_FACEBOOK_KNOWN_USERS" msprop:Generator_TableClassName="V_FACEBOOK_KNOWN_USERSDataTable" msprop:Generator_TableVarName="tableV_FACEBOOK_KNOWN_USERS" msprop:Generator_RowChangedName="V_FACEBOOK_KNOWN_USERSRowChanged" msprop:Generator_TablePropName="V_FACEBOOK_KNOWN_USERS" msprop:Generator_RowDeletingName="V_FACEBOOK_KNOWN_USERSRowDeleting" msprop:Generator_RowChangingName="V_FACEBOOK_KNOWN_USERSRowChanging" msprop:Generator_RowEvHandlerName="V_FACEBOOK_KNOWN_USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="V_FACEBOOK_KNOWN_USERSRowDeleted" msprop:Generator_RowClassName="V_FACEBOOK_KNOWN_USERSRow" msprop:Generator_UserTableName="V_FACEBOOK_KNOWN_USERS" msprop:Generator_RowEvArgName="V_FACEBOOK_KNOWN_USERSRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="USER_ID" msprop:Generator_ColumnVarNameInTable="columnUSER_ID" msprop:Generator_ColumnPropNameInRow="USER_ID" msprop:Generator_ColumnPropNameInTable="USER_IDColumn" msprop:Generator_UserColumnName="USER_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PHONE_NUMBER" msprop:Generator_ColumnVarNameInTable="columnPHONE_NUMBER" msprop:Generator_ColumnPropNameInRow="PHONE_NUMBER" msprop:Generator_ColumnPropNameInTable="PHONE_NUMBERColumn" msprop:Generator_UserColumnName="PHONE_NUMBER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ADD_DATE" msprop:Generator_ColumnVarNameInTable="columnADD_DATE" msprop:Generator_ColumnPropNameInRow="ADD_DATE" msprop:Generator_ColumnPropNameInTable="ADD_DATEColumn" msprop:Generator_UserColumnName="ADD_DATE" type="xs:dateTime" />
+              <xs:element name="UPDATE_DATE" msprop:Generator_ColumnVarNameInTable="columnUPDATE_DATE" msprop:Generator_ColumnPropNameInRow="UPDATE_DATE" msprop:Generator_ColumnPropNameInTable="UPDATE_DATEColumn" msprop:Generator_UserColumnName="UPDATE_DATE" type="xs:dateTime" />
+              <xs:element name="RECEIVE_SETTINGS" msprop:Generator_ColumnVarNameInTable="columnRECEIVE_SETTINGS" msprop:Generator_ColumnPropNameInRow="RECEIVE_SETTINGS" msprop:Generator_ColumnPropNameInTable="RECEIVE_SETTINGSColumn" msprop:Generator_UserColumnName="RECEIVE_SETTINGS" type="xs:short" />
+              <xs:element name="USERNAME" msprop:Generator_ColumnVarNameInTable="columnUSERNAME" msprop:Generator_ColumnPropNameInRow="USERNAME" msprop:Generator_ColumnPropNameInTable="USERNAMEColumn" msprop:Generator_UserColumnName="USERNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="512" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LAST_FEEDBACK" msprop:Generator_ColumnVarNameInTable="columnLAST_FEEDBACK" msprop:Generator_ColumnPropNameInRow="LAST_FEEDBACK" msprop:Generator_ColumnPropNameInTable="LAST_FEEDBACKColumn" msprop:Generator_UserColumnName="LAST_FEEDBACK" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FEEDBACK_COUNT" msprop:Generator_ColumnVarNameInTable="columnFEEDBACK_COUNT" msprop:Generator_ColumnPropNameInRow="FEEDBACK_COUNT" msprop:Generator_ColumnPropNameInTable="FEEDBACK_COUNTColumn" msprop:Generator_UserColumnName="FEEDBACK_COUNT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LAST_CREDIT_REQUEST" msprop:Generator_ColumnVarNameInTable="columnLAST_CREDIT_REQUEST" msprop:Generator_ColumnPropNameInRow="LAST_CREDIT_REQUEST" msprop:Generator_ColumnPropNameInTable="LAST_CREDIT_REQUESTColumn" msprop:Generator_UserColumnName="LAST_CREDIT_REQUEST" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LAST_PLASTIC_CARD" msprop:Generator_ColumnVarNameInTable="columnLAST_PLASTIC_CARD" msprop:Generator_ColumnPropNameInRow="LAST_PLASTIC_CARD" msprop:Generator_ColumnPropNameInTable="LAST_PLASTIC_CARDColumn" msprop:Generator_UserColumnName="LAST_PLASTIC_CARD" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PLASTIC_CARD_COUNT" msprop:Generator_ColumnVarNameInTable="columnPLASTIC_CARD_COUNT" msprop:Generator_ColumnPropNameInRow="PLASTIC_CARD_COUNT" msprop:Generator_ColumnPropNameInTable="PLASTIC_CARD_COUNTColumn" msprop:Generator_UserColumnName="PLASTIC_CARD_COUNT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LANGUAGE" msprop:Generator_ColumnVarNameInTable="columnLANGUAGE" msprop:Generator_ColumnPropNameInRow="LANGUAGE" msprop:Generator_ColumnPropNameInTable="LANGUAGEColumn" msprop:Generator_UserColumnName="LANGUAGE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="V_FACEBOOK_SAVED_CREDIT" msprop:Generator_TableClassName="V_FACEBOOK_SAVED_CREDITDataTable" msprop:Generator_TableVarName="tableV_FACEBOOK_SAVED_CREDIT" msprop:Generator_RowChangedName="V_FACEBOOK_SAVED_CREDITRowChanged" msprop:Generator_TablePropName="V_FACEBOOK_SAVED_CREDIT" msprop:Generator_RowDeletingName="V_FACEBOOK_SAVED_CREDITRowDeleting" msprop:Generator_RowChangingName="V_FACEBOOK_SAVED_CREDITRowChanging" msprop:Generator_RowEvHandlerName="V_FACEBOOK_SAVED_CREDITRowChangeEventHandler" msprop:Generator_RowDeletedName="V_FACEBOOK_SAVED_CREDITRowDeleted" msprop:Generator_RowClassName="V_FACEBOOK_SAVED_CREDITRow" msprop:Generator_UserTableName="V_FACEBOOK_SAVED_CREDIT" msprop:Generator_RowEvArgName="V_FACEBOOK_SAVED_CREDITRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="USER_ID" msprop:Generator_ColumnVarNameInTable="columnUSER_ID" msprop:Generator_ColumnPropNameInRow="USER_ID" msprop:Generator_ColumnPropNameInTable="USER_IDColumn" msprop:Generator_UserColumnName="USER_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CLIENT_ID" msprop:Generator_ColumnVarNameInTable="columnCLIENT_ID" msprop:Generator_ColumnPropNameInRow="CLIENT_ID" msprop:Generator_ColumnPropNameInTable="CLIENT_IDColumn" msprop:Generator_UserColumnName="CLIENT_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BIRTHDATE" msprop:Generator_ColumnVarNameInTable="columnBIRTHDATE" msprop:Generator_ColumnPropNameInRow="BIRTHDATE" msprop:Generator_ColumnPropNameInTable="BIRTHDATEColumn" msprop:Generator_UserColumnName="BIRTHDATE" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

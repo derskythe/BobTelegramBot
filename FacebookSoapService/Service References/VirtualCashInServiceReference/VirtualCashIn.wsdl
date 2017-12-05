@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://cashin/CashInAdminService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://cashin/CashInAdminService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://cashin/CashInAdminService/Imports">
+      <xsd:import schemaLocation="http://cashin.terminal.server:4443/VirtualCashIn?xsd=xsd0" namespace="http://cashin/CashInAdminService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CashInVirtualTerminalServer_GetPublicKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublicKey" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetPublicKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublicKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_Pay_InputMessage">
+    <wsdl:part name="parameters" element="tns:Pay" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_Pay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PayResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetClientInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientInfo" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetClientInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetPaymentServiceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentServiceInfo" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetPaymentServiceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentServiceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_ListPaymentCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListPaymentCategories" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_ListPaymentCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListPaymentCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetInfoPureByServiceCodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoPureByServiceCodes" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetInfoPureByServiceCodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInfoPureByServiceCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetScIdentificationMethodList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScIdentificationMethodList" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetScIdentificationMethodList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScIdentificationMethodListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetServiceCodesListByScCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceCodesListByScCode" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetServiceCodesListByScCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceCodesListByScCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_CreditRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreditRequest" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_CreditRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreditRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetClientBirtday_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientBirtday" />
+  </wsdl:message>
+  <wsdl:message name="CashInVirtualTerminalServer_GetClientBirtday_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientBirtdayResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CashInVirtualTerminalServer">
+    <wsdl:operation name="GetPublicKey">
+      <wsdl:input wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetPublicKey" message="tns:CashInVirtualTerminalServer_GetPublicKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetPublicKeyResponse" message="tns:CashInVirtualTerminalServer_GetPublicKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Pay">
+      <wsdl:input wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/Pay" message="tns:CashInVirtualTerminalServer_Pay_InputMessage" />
+      <wsdl:output wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/PayResponse" message="tns:CashInVirtualTerminalServer_Pay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientInfo">
+      <wsdl:input wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetClientInfo" message="tns:CashInVirtualTerminalServer_GetClientInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetClientInfoResponse" message="tns:CashInVirtualTerminalServer_GetClientInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentServiceInfo">
+      <wsdl:input wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetPaymentServiceInfo" message="tns:CashInVirtualTerminalServer_GetPaymentServiceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetPaymentServiceInfoResponse" message="tns:CashInVirtualTerminalServer_GetPaymentServiceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListPaymentCategories">
+      <wsdl:input wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/ListPaymentCategories" message="tns:CashInVirtualTerminalServer_ListPaymentCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/ListPaymentCategoriesResponse" message="tns:CashInVirtualTerminalServer_ListPaymentCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInfoPureByServiceCodes">
+      <wsdl:input wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetInfoPureByServiceCodes" message="tns:CashInVirtualTerminalServer_GetInfoPureByServiceCodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetInfoPureByServiceCodesResponse" message="tns:CashInVirtualTerminalServer_GetInfoPureByServiceCodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScIdentificationMethodList">
+      <wsdl:input wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetScIdentificationMethodList" message="tns:CashInVirtualTerminalServer_GetScIdentificationMethodList_InputMessage" />
+      <wsdl:output wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetScIdentificationMethodListResponse" message="tns:CashInVirtualTerminalServer_GetScIdentificationMethodList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCodesListByScCode">
+      <wsdl:input wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetServiceCodesListByScCode" message="tns:CashInVirtualTerminalServer_GetServiceCodesListByScCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetServiceCodesListByScCodeResponse" message="tns:CashInVirtualTerminalServer_GetServiceCodesListByScCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditRequest">
+      <wsdl:input wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/CreditRequest" message="tns:CashInVirtualTerminalServer_CreditRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/CreditRequestResponse" message="tns:CashInVirtualTerminalServer_CreditRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientBirtday">
+      <wsdl:input wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetClientBirtday" message="tns:CashInVirtualTerminalServer_GetClientBirtday_InputMessage" />
+      <wsdl:output wsaw:Action="http://cashin/CashInAdminService/CashInVirtualTerminalServer/GetClientBirtdayResponse" message="tns:CashInVirtualTerminalServer_GetClientBirtday_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

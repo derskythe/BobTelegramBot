@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E65ABB75-AA0C-4348-B34E-8D9F8E0048B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BobTelegramBot</RootNamespace>
+    <AssemblyName>BobTelegramBot</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Geolocation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Geolocation.1.1.1\lib\Geolocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.11\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telegram.Bot, Version=10.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Telegram.Bot.10.4.0\lib\net45\Telegram.Bot.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BotOnOnCallbackQuery.cs" />
+    <Compile Include="BotOnOnMessage.cs" />
+    <Compile Include="BotService.cs" />
+    <Compile Include="Service References\InternetBankingMobileServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Structures\ButtonType.cs" />
+    <Compile Include="Structures\CallbackTypes.cs" />
+    <Compile Include="Structures\ClientInfo.cs" />
+    <Compile Include="Structures\CommandsList.cs" />
+    <Compile Include="Structures\ChatBotCreditCardRequest.cs" />
+    <Compile Include="Structures\CreditCardStep.cs" />
+    <Compile Include="Structures\CurrencyCalculator.cs" />
+    <Compile Include="Structures\Emoji.cs" />
+    <Compile Include="Structures\Feedback.cs" />
+    <Compile Include="Structures\Keyboards.cs" />
+    <Compile Include="Structures\LocationHelper.cs" />
+    <Compile Include="MemoryCacheUtil.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceHelper\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\VirtualCashInServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.AccountInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.AsanAuthResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.AsanCheckCredentialsResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.BalanceSheetAccountResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.BobSiteCardAndBranchListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.BranchAndAtmListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ChangePinResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientAccountHistoryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientAccountsListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientCardHistoryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientCardsListAndInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientCardsListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientCreditCardsListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientCreditInfoResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientCreditsInfoListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientCreditsListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientDebetCardsListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientDepositsListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.ClientPosAccountHistoryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.CreditOrderResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.CurrencyRatesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.EcommResponseResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.MobileBaseResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.OnlineServicesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.PaymentCategoriesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.PaymentHistoryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\BobTelegramBot.InternetBankingMobileServiceReference.PaymentResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\InternetBankingMobileProdService.wsdl" />
+    <None Include="Service References\InternetBankingMobileServiceReference\InternetBankingMobileProdService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\InternetBankingMobileServiceReference\InternetBankingMobileService.wsdl" />
+    <None Include="Service References\ServiceHelper\BobTelegramBot.ServiceHelper.BobSiteCardAndBranchListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceHelper\BobTelegramBot.ServiceHelper.BranchAndAtmListResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceHelper\BobTelegramBot.ServiceHelper.CurrencyRatesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceHelper\BobTelegramBot.ServiceHelper.KeyValueResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceHelper\BobTelegramBot.ServiceHelper.MobileBaseResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceHelper\TelegramBotHelperService.wsdl" />
+    <None Include="Service References\ServiceHelper\TelegramBotHelperService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceHelper\TelegramBotHelperService1.wsdl" />
+    <None Include="Service References\VirtualCashInServiceReference\BobTelegramBot.VirtualCashInServiceReference.BirthdayResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VirtualCashInServiceReference\BobTelegramBot.VirtualCashInServiceReference.CategoriesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VirtualCashInServiceReference\BobTelegramBot.VirtualCashInServiceReference.GetClientInfoExtResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VirtualCashInServiceReference\BobTelegramBot.VirtualCashInServiceReference.PaymentServiceInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VirtualCashInServiceReference\BobTelegramBot.VirtualCashInServiceReference.ScIdentificationMethodListWrapper.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VirtualCashInServiceReference\BobTelegramBot.VirtualCashInServiceReference.ServiceCodeListWrapper.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VirtualCashInServiceReference\BobTelegramBot.VirtualCashInServiceReference.StandardResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\VirtualCashInServiceReference\CashInVirtualTerminalServer.wsdl" />
+    <None Include="Service References\VirtualCashInServiceReference\VirtualCashIn.wsdl" />
+    <None Include="Service References\VirtualCashInServiceReference\VirtualCashIn.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\InternetBankingMobileServiceReference\" />
+    <WCFMetadataStorage Include="Service References\ServiceHelper\" />
+    <WCFMetadataStorage Include="Service References\VirtualCashInServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceHelper\TelegramBotHelperService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceHelper\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceHelper\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceHelper\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Containers\Containers.csproj">
+      <Project>{c5ec6d90-68d5-4d98-ae47-0360f5071a09}</Project>
+      <Name>Containers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Db\Db.csproj">
+      <Project>{fe416180-8db2-42cc-8cd3-41fcbcf5021e}</Project>
+      <Name>Db</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VirtualCashInServiceReference\VirtualCashIn.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VirtualCashInServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VirtualCashInServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\VirtualCashInServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InternetBankingMobileServiceReference\InternetBankingMobileProdService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InternetBankingMobileServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InternetBankingMobileServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\InternetBankingMobileServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

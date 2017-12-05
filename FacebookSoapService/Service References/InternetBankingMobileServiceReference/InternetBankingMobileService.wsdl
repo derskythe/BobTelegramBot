@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.bankofbaku.com/PaymentService" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="InternetBankingMobileService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://www.bankofbaku.com/PaymentService" location="http://devsrv:8029/Services/InternetBankingMobileProdService?wsdl=wsdl0" />
+  <wsdl:types />
+  <wsdl:binding name="SOAP" type="i0:InternetBankingMobileService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckUserCredentials">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckUserCredentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserOtp">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckUserOtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePinAndCompleteAuth">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/SavePinAndCompleteAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAccounts">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientCreditAccounts">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCreditAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientCreditCards">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCreditCards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDebetCards">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientDebetCards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeposits">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientDeposits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfo">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetAccountInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientBankHistory">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientBankHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAccountHistory">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAccountHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientCardHistory">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCardHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineServices">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetOnlineServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyRates">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCurrencyRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrencyRatesV2">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCurrencyRatesV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUserFeedback">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/RegisterUserFeedback" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditOrderData">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCreditOrderData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterCreditOrder">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/RegisterCreditOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMobilePin">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ChangeMobilePin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeClientPassword">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ChangeClientPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountInfoAndHistory">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetAccountInfoAndHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientPosAccountHistory">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientPosAccountHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Card2Card">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/Card2Card" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Card2CardLocal">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/Card2CardLocal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAllCards">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAllCards" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BlockCard">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/BlockCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientAllCredits">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientAllCredits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitCreditTransaction">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/InitCreditTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishCreditPayment">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/FinishCreditPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentCategories">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetPaymentCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckServiceFields">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckServiceFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEpayUtilityPayment">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ProcessEpayUtilityPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessEcommUtilityPayment">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ProcessEcommUtilityPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishEcommUtilityPayment">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/FinishEcommUtilityPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentHistory">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetPaymentHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestFunctions">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/TestFunctions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckMobilePinV2">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckMobilePinV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAsanCredentials">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/CheckAsanCredentials" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAsanAuthStatus">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetAsanAuthStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAsanAuthCertificate">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/SaveAsanAuthCertificate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmAsanAuthAndLogin">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/ConfirmAsanAuthAndLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePinAndConfirmAsanAuthLogin">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/SavePinAndConfirmAsanAuthLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientCreditInfo">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetClientCreditInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchAndAtmList">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetBranchAndAtmList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardsAndBranches">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetCardsAndBranches" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderPlasticCard">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/OrderPlasticCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceSheets">
+      <soap:operation soapAction="http://www.bankofbaku.com/PaymentService/InternetBankingMobileService/GetBalanceSheets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InternetBankingMobileService">
+    <wsdl:port name="SOAP" binding="tns:SOAP">
+      <soap:address location="http://devsrv:8029/Services/InternetBankingMobileProdService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

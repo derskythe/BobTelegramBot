@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.bankofbaku.com/PaymentService" elementFormDefault="qualified" targetNamespace="http://www.bankofbaku.com/PaymentService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetCurrencyRates">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="GetCurrencyRatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetCurrencyRatesResult" type="tns:CurrencyRatesResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="CurrencyRatesResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MobileBaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="CurrencyRates" type="tns:ArrayOfIbCurrencyRate" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MobileBaseResult">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Code" type="tns:ResultCode" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Message" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="AsanResultCode" type="tns:AsanResultCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="ResultCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Error" />
+      <xs:enumeration value="InvalidData" />
+      <xs:enumeration value="DeviceNotFound" />
+      <xs:enumeration value="NoMobile" />
+      <xs:enumeration value="InvalidSid" />
+      <xs:enumeration value="OtpDailyLimitExceeded" />
+      <xs:enumeration value="AccountLocked" />
+      <xs:enumeration value="AccountTemporarilyBlocked" />
+      <xs:enumeration value="AsanError" />
+      <xs:enumeration value="AsanOutstandingTransaction" />
+      <xs:enumeration value="AsanSignatureCreated" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AsanResultCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NotSet" />
+      <xs:enumeration value="InternalError" />
+      <xs:enumeration value="UserAuthenticated" />
+      <xs:enumeration value="InvalidParameters" />
+      <xs:enumeration value="NoAuthCertificate" />
+      <xs:enumeration value="NoSignCertificate" />
+      <xs:enumeration value="PhoneIdMismatch" />
+      <xs:enumeration value="ServiceOverload" />
+      <xs:enumeration value="InvalidSignCertificate" />
+      <xs:enumeration value="InvalidPhoneNumber" />
+      <xs:enumeration value="ExpiredTransaction" />
+      <xs:enumeration value="InvalidSign" />
+      <xs:enumeration value="PhoneUnreachable" />
+      <xs:enumeration value="ProcessError" />
+      <xs:enumeration value="SimError" />
+      <xs:enumeration value="UserCancel" />
+      <xs:enumeration value="CheckPhone" />
+      <xs:enumeration value="FillFields" />
+      <xs:enumeration value="AuthCertificateInvalid" />
+      <xs:enumeration value="OutstandingTransaction" />
+      <xs:enumeration value="MidNotReady" />
+      <xs:enumeration value="NotValid" />
+      <xs:enumeration value="SendError" />
+      <xs:enumeration value="SignatureCreated" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfIbCurrencyRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IbCurrencyRate" nillable="true" type="tns:IbCurrencyRate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IbCurrencyRate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="currency" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="rate" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SellRate" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="BuyRate" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisterUserFeedback">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="feedback" type="tns:FeedbackMessage" />
+        <xs:element minOccurs="0" maxOccurs="1" name="feedbackCategory" type="tns:KeyValueResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="FeedbackMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Subject" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KeyValueResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="id" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="value" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BaseResult" abstract="true">
+    <xs:attribute name="code" type="tns:ErrorCodes" use="required" />
+    <xs:attribute name="description" type="xs:string" />
+  </xs:complexType>
+  <xs:simpleType name="ErrorCodes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Ok" />
+      <xs:enumeration value="InvalidNumber" />
+      <xs:enumeration value="InvalidParameters" />
+      <xs:enumeration value="DublicatePaymentId" />
+      <xs:enumeration value="InvalidCurrency" />
+      <xs:enumeration value="InvalidUser" />
+      <xs:enumeration value="TransactionNotFound" />
+      <xs:enumeration value="StatusUnknown" />
+      <xs:enumeration value="NoSuchClientCode" />
+      <xs:enumeration value="RecordNotFound" />
+      <xs:enumeration value="TransactionNotCompleted" />
+      <xs:enumeration value="NotCorrectStatusPassed" />
+      <xs:enumeration value="NoCardFound" />
+      <xs:enumeration value="StillRegistered" />
+      <xs:enumeration value="NoOtpSetted" />
+      <xs:enumeration value="OtpIsNotValid" />
+      <xs:enumeration value="NoActiveSession" />
+      <xs:enumeration value="DailyTransactionCountExceeded" />
+      <xs:enumeration value="InvalidAmount" />
+      <xs:enumeration value="UnsuccessfulTransaction" />
+      <xs:enumeration value="TransactionAlreadyProcessed" />
+      <xs:enumeration value="DuplicateAuthCode" />
+      <xs:enumeration value="NoFoundAuthCode" />
+      <xs:enumeration value="UnknownError" />
+      <xs:enumeration value="SystemError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="RegisterUserFeedbackResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="RegisterUserFeedbackResult" type="tns:MobileBaseResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBranchAndAtmList">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="GetBranchAndAtmListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetBranchAndAtmListResult" type="tns:BranchAndAtmListResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="BranchAndAtmListResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MobileBaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="BranchList" type="tns:ArrayOfBranch" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AtmList" type="tns:ArrayOfAtm" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PaymentTerminalList" type="tns:ArrayOfPaymentTerminal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Branch" nillable="true" type="tns:Branch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Branch">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Title" type="tns:MultiLanguageString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Desc" type="tns:MultiLanguageString" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Longitude" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MultiLanguageString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Az" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="En" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Ru" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfAtm">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Atm" nillable="true" type="tns:Atm" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Atm">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Title" type="tns:MultiLanguageString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Desc" type="tns:MultiLanguageString" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Active" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPaymentTerminal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentTerminal" nillable="true" type="tns:PaymentTerminal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentTerminal">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Title" type="tns:MultiLanguageString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Desc" type="tns:MultiLanguageString" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Latitude" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Longitude" type="xs:double" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Active" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetFeedbackCategories">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="GetFeedbackCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetFeedbackCategoriesResult" type="tns:ArrayOfKeyValueResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ArrayOfKeyValueResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueResult" nillable="true" type="tns:KeyValueResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetCardsAndBranches">
+    <xs:complexType />
+  </xs:element>
+  <xs:element name="GetCardsAndBranchesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="GetCardsAndBranchesResult" type="tns:BobSiteCardAndBranchListResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="BobSiteCardAndBranchListResult">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MobileBaseResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="BobSiteBranchList" type="tns:ArrayOfBobSiteBranch" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BobSiteCardList" type="tns:ArrayOfBobSiteCard" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfBobSiteBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BobSiteBranch" nillable="true" type="tns:BobSiteBranch" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BobSiteBranch">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BranchId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BranchName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BranchNameAz" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BranchNameEn" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BranchNameRu" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfBobSiteCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BobSiteCard" nillable="true" type="tns:BobSiteCard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BobSiteCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CardId" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CardTitle" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrderPlasticCard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="request" type="tns:BobSiteCardOrderRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="BobSiteCardOrderRequest">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CardId" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OrderType" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Period" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Currency" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Surname" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PatronymicName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CardName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CardSurname" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Code" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Sex" type="tns:PersonSex" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PassportFront" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PassportBack" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PassportNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PassportOrgan" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="PassportDate" type="xs:dateTime" />
+      <xs:element minOccurs="1" maxOccurs="1" name="BirthDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RegAddress" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LivingAddress" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="HomePhone" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MobilePhone" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WorkPhone" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Email" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="BranchId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PersonSex">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Female" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OrderPlasticCardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="OrderPlasticCardResult" type="tns:MobileBaseResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

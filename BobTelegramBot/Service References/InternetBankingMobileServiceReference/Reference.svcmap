@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="991b66f0-5302-4f6b-802f-fc9a00bd153e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://devsrv:8029/Services/InternetBankingMobileProdService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="InternetBankingMobileProdService.wsdl" MetadataType="Wsdl" ID="223694e3-6cb1-4218-9683-b1eaa3c2eef6" SourceId="1" SourceUrl="http://devsrv:8029/Services/InternetBankingMobileProdService?wsdl=wsdl0" />
+    <MetadataFile FileName="InternetBankingMobileService.wsdl" MetadataType="Wsdl" ID="7d2a56a3-3a62-4266-80bf-9d8eda6d4ff3" SourceId="1" SourceUrl="http://devsrv:8029/Services/InternetBankingMobileProdService?wsdl" />
+    <MetadataFile FileName="InternetBankingMobileProdService.xsd" MetadataType="Schema" ID="206f6f23-f950-4727-9c4b-601b842778d8" SourceId="1" SourceUrl="http://devsrv:8029/Services/InternetBankingMobileProdService?xsd=xsd0" />
+    <MetadataFile FileName="InternetBankingMobileProdService.disco" MetadataType="Disco" ID="93d00191-682b-4c19-b185-fbb89edddd63" SourceId="1" SourceUrl="http://devsrv:8029/Services/InternetBankingMobileProdService?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
